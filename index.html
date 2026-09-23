@@ -108,6 +108,46 @@
   @media (max-width:520px){.card{padding:1rem;}.field-row{grid-template-columns:1fr;}.metrics{grid-template-columns:1fr 1fr;}.focus-grid{grid-template-columns:1fr;}.event{grid-template-columns:76px 52px minmax(0,1fr);gap:.4rem;padding:.55rem;}.action{flex:1 1 auto;}}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.action{transition:none;}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What counts as a repeated signature?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Numbers, IDs, and URLs are replaced with placeholders before messages are compared. That lets \u201csegment 891\u201d and \u201csegment 903\u201d become the same repeated failure instead of two unrelated lines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What log formats does it understand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There's no strict schema. The page looks for common keywords and patterns \u2014 manifest/segment/CDN terms, DRM and key-system names, playback and buffering language, focus/remote-control input, and auth/entitlement terms \u2014 across whatever plain-text lines you paste, plus standard severity words like ERROR, WARN, and INFO. Most human-readable smart-TV, player, and DRM logs work even without matching one vendor's exact format."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "It picked the wrong \"likely focus area\"",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The focus areas are keyword heuristics, not a certified diagnosis. When a log's language overlaps between families \u2014 for example, a manifest fetch that also mentions a token \u2014 the distiller can lean toward the wrong one. Use it to narrow down where to look first, not as a final answer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it fetch any of the URLs it finds in my log?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The text is only read and pattern-matched in this browser tab. No manifest, segment, or license URL found in a pasted log is ever requested."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="page-head">
@@ -218,6 +258,19 @@
       <p>Numbers, IDs, and URLs are replaced with placeholders before messages are compared. That lets “segment 891” and “segment 903” become the same repeated failure instead of two unrelated lines.</p>
     </details>
   </section>
+    <section class="card faq" aria-labelledby="faqHeading">
+    <h2 id="faqHeading">FAQ</h2>
+    <details><summary>What log formats does it understand?</summary>
+      <p>There's no strict schema. The page looks for common keywords and patterns &mdash; manifest/segment/CDN terms, DRM and key-system names, playback and buffering language, focus/remote-control input, and auth/entitlement terms &mdash; across whatever plain-text lines you paste, plus standard severity words like ERROR, WARN, and INFO. Most human-readable smart-TV, player, and DRM logs work even without matching one vendor's exact format.</p>
+    </details>
+    <details><summary>It picked the wrong "likely focus area"</summary>
+      <p>The focus areas are keyword heuristics, not a certified diagnosis. When a log's language overlaps between families &mdash; for example, a manifest fetch that also mentions a token &mdash; the distiller can lean toward the wrong one. Use it to narrow down where to look first, not as a final answer.</p>
+    </details>
+    <details><summary>Does it fetch any of the URLs it finds in my log?</summary>
+      <p>No. The text is only read and pattern-matched in this browser tab. No manifest, segment, or license URL found in a pasted log is ever requested.</p>
+    </details>
+  </section>
+
   <div id="ad-slot"></div>
 </main>
 <script src="app.js"></script>
